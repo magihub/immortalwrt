@@ -1,14 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+#name: CI
 
 # Controls when the action will run. 
-on:
+#on:
   # Triggers the workflow on push or pull request events but only for the openwrt-18.06-k5.4 branch
-  push:
-    branches: [ openwrt-18.06-k5.4 ]
-  pull_request:
-    branches: [ openwrt-18.06-k5.4 ]
+#  push:
+#    branches: [ openwrt-18.06-k5.4 ]
+#  pull_request:
+#    branches: [ openwrt-18.06-k5.4 ]
 
   # Allows you to run this workflow manually from the Actions tab
 #  workflow_dispatch:
@@ -35,6 +35,15 @@ on:
 #        run: |
 #          echo Add other actions to build,
 #          echo test, and deploy your project.
+
+
+
+
+
+
+
+
+
 
 
 
@@ -108,9 +117,9 @@ jobs:
           # 在 cat >> .config <<EOF 到 EOF 之间粘贴你的编译配置, 需注意缩进关系
           # 例如:
           cat >> .config <<EOF
-          CONFIG_TARGET_IMAGES_GZIP=y
-          CONFIG_KERNEL_BUILD_USER="OpenWrt-CI"
-          CONFIG_KERNEL_BUILD_DOMAIN="Azure"
+          CONFIG_TARGET_rockchip=y
+          CONFIG_TARGET_rockchip_armv8=y
+          CONFIG_TARGET_rockchip_armv8_DEVICE_friendlyarm_nanopi-r2s=y
           EOF
           #
           # ===============================================================
